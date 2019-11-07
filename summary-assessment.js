@@ -59,7 +59,11 @@ function each(coll, f) {
   //wordLengths("hello its me") // [5,3,2]
   
   function wordLengths(str) {
-      // TODO: your code here 
+  	var arr = str.split(' ');
+	return filter(arr, function(element){
+		return element.length;
+	})
+
   }
   
   //=============================================================================
@@ -72,8 +76,12 @@ function each(coll, f) {
   // countOccurrences("hello, world!", "l"); // 3
   
   function countOccurrences(string, character) {
-      // your code is here
-  }
+ 	var arr = string.split(' ');
+ 	return filter(arr, function(element){
+ 		return element.(character);
+ 	})
+ }
+  
   
   //=============================================================================
   /*                                  Q3                                    */
@@ -83,9 +91,15 @@ function each(coll, f) {
   //solve it using the most appropriate helper functions(reduce,each,map,filter).
   // wordsLongerThanThree("Hello Mad World") //["Hello", "World"]
   
-  function wordsLongerThanThree(str) {
-      // TODO: your code here 
-  }
+ function wordsLongerThanThree(str) {
+    var arr = str.split(' ');
+ 	return filter(arr, function(element){
+ 		if (element.length > 3) {
+return element.length;
+        }
+ 	})
+ }
+  
   
   //=============================================================================
   /*                                  Q4                                        */
@@ -97,10 +111,7 @@ function each(coll, f) {
   //repeatString('dog', 1); // => 'dog' 
   //repeatString('dog', 2); // => 'dog' + 'dog' => 'dogdog' 
   //repeatString('dog', 3); // => 'dog' + 'dog' + 'dog' => 'dogdogdog'
-  
-  function repeatString(str, count) { 
-   // TODO: your code here 
-  } 
+
    
   
   //=============================================================================
@@ -129,7 +140,19 @@ function each(coll, f) {
   // pizza.eatSlice();
   
   // Write your code here .....
-  
+ function makePizza(crust, size, slice) {
+ 	return {
+ 		crust: crust;
+ 		size: size;
+ 		slice: slice;
+ 	}
+ }
+var pizza = makePizza(crust:"thin", size:"M", slice: 2);
+
+var addIgredient =function(ingredient) {
+	return pizza.addIgredient("");
+}
+
   //=============================================================================
   /*                                  Q6                                      */
   //=============================================================================
@@ -191,6 +214,7 @@ function each(coll, f) {
   
   //DO NOT USE JQUERY
   
+
   //================================================================================
   /*                              Q9                                            */
   //================================================================================
@@ -216,10 +240,13 @@ function each(coll, f) {
   //================================================================================
   // Theoretical questions.
   // 1- In your own words,Why do we use Closures ?
+  Closures use variables from inner function in global scope.
   
   // 2- In OOP, what does "this" refer to ?
-  
+  When an outer variables is used in inner function, we use this to indicate that we want to use this variables. 
   // 3- What is jQuery?
+  A javascrip library. 
   
   // 4- what is the diffrence between Closure's methods and The OOP's methods?
+  Closure use variables from inner function in outer scope and OOP use outer functions in inner ones.
   
